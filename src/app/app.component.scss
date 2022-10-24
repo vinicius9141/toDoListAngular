@@ -1,4 +1,7 @@
 :host {
+  .spaceBottom64 {
+    margin-bottom: 64px;
+  }
   h1 {
     text-align: center;
     font-weight: 300;
@@ -15,9 +18,10 @@
 
     .insertTask {
       display: flex;
+      align-content: center;
+      align-items: center;
       flex-direction: column;
       justify-content: center;
-      width: 30%;
       height: auto;
 
       input {
@@ -56,21 +60,35 @@
     list-style: none;
 
     .cardTask {
-      width: 50%;
       display: flex;
       justify-content: space-between;
       white-space: nowrap;
       text-overflow: ellipsis;
       overflow: hidden;
       height: auto;
-      padding: 5px;
+      padding: 10px;
       border-radius: 5px;
       border: 1px solid #ccc;
       border-bottom: 2px solid #939;
       margin-top: 10px;
-      background-color: #e4e4e4;
+      background-color: #f8e2e2;
       color: #000;
       font-size: 24px;
+
+      &:hover {
+        border-bottom: 2px solid #92940b;
+      }
+
+      .doneButton {
+        background-color: #339972;
+        border: none;
+        border-radius: 5px;
+        padding: 9px;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 200;
+        cursor: pointer;
+      }
     }
   }
 }
