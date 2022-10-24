@@ -1,0 +1,76 @@
+:host {
+  h1 {
+    text-align: center;
+    font-weight: 300;
+    padding: 13px;
+  }
+  .container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    padding: 15px;
+
+    .insertTask {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 30%;
+      height: auto;
+
+      input {
+        padding: 17px;
+        height: auto;
+        margin-right: 10px;
+        border: none;
+        background-color: #e4e4e4;
+        border-bottom: 2px solid#939;
+        border-radius: 5px;
+        transition: all 0.3s;
+
+        &:focus {
+          outline: none;
+          border-bottom: 2px solid #339972;
+        }
+      }
+
+      .saveButton {
+        border: none;
+        border-radius: 10px;
+        padding: 12px;
+        background-color: #339972;
+        color: #fff;
+        font-size: 14px;
+        transition: all 0.3s;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #1f694d;
+        }
+      }
+    }
+  }
+  ul {
+    list-style: none;
+
+    .cardTask {
+      width: 50%;
+      display: flex;
+      justify-content: space-between;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      height: auto;
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      border-bottom: 2px solid #939;
+      margin-top: 10px;
+      background-color: #e4e4e4;
+      color: #000;
+      font-size: 24px;
+    }
+  }
+}
