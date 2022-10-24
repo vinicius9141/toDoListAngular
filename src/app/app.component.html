@@ -1,17 +1,19 @@
-<h1>To-do List</h1>
 <div class="container">
   <div class="insertTask">
-    <div>
-      <input type="text" title="Adicione uma tarefa" [(ngModel)]="newTask" />
-      <button class="saveButton" (click)="addTask()">Adicionar</button>
-    </div>
+    <h1>To-do List</h1>
+
     <ul>
+      <div class="spaceBottom64">
+        <input type="text" title="Adicione uma tarefa" [(ngModel)]="newTask" />
+        <button class="saveButton" (click)="addTask()">Adicionar</button>
+      </div>
       <li
         class="cardTask"
         [title]="task"
         *ngFor="let task of tasks; let i = index"
       >
-        {{ task }} <button (click)="removeTask(i)">Feito</button>
+        {{ task }}
+        <button class="doneButton" (click)="removeTask(i)">Feito</button>
       </li>
     </ul>
   </div>
