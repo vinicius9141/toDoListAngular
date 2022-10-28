@@ -28,6 +28,7 @@
         padding: 17px;
         height: auto;
         margin-right: 10px;
+        margin-top: 20px;
         border: none;
         background-color: #e4e4e4;
         border-bottom: 2px solid#939;
@@ -56,15 +57,16 @@
       }
     }
   }
-  ul {
+  .listTasks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     list-style: none;
 
     .cardTask {
       display: flex;
       justify-content: space-between;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
+      max-width: 370px;
       height: auto;
       padding: 10px;
       border-radius: 5px;
@@ -80,6 +82,9 @@
       }
       .taskLoaded {
         margin-right: 1vw;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        word-break: break-word;
       }
 
       .doneButton {
