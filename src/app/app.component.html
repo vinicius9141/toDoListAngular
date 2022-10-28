@@ -3,7 +3,11 @@
     <ul class="listTasks">
       <h1>To-do List</h1>
       <div class="spaceBottom64">
-        <input type="text" title="Adicione uma tarefa" [(ngModel)]="newTask" />
+        <input
+          type="text"
+          title="Adicione uma tarefa"
+          [(ngModel)]="newTask.name"
+        />
         <button class="saveButton" (click)="addTask()">Adicionar</button>
       </div>
       <li
@@ -11,8 +15,15 @@
         [title]="task"
         *ngFor="let task of tasks; let i = index"
       >
-        <p class="taskLoaded">{{ task }}</p>
-        <button class="doneButton" (click)="removeTask(i)">Feito</button>
+        <p class="taskLoaded" ngClass="{{ task.isCompleted ? 'done' : '' }}">
+          {{ task.name }}
+        </p>
+        <button class="actionButtons" (click)="done(i)">
+          <img src="../assets/img/done_button.svg" />
+        </button>
+        <button class="actionButtons remove" (click)="removeTask(i)">
+          <img src="../assets/img/delete_button.svg" />
+        </button>
       </li>
     </ul>
   </div>

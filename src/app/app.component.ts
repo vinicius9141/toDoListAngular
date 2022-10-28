@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  public newTask: any;
+  public newTask: any = {
+    name: '',
+    isCompleted: false,
+  };
   public refreshedTasks: any;
 
   public tasks: any = [];
@@ -33,5 +36,10 @@ export class AppComponent implements OnInit {
 
   public saveTasks(): void {
     localStorage.setItem('task', JSON.stringify(this.tasks));
+  }
+
+  public done(index: number): void {
+    this.tasks[index].isCompleted = !this.tasks[index].isCompleted;
+    this.saveTasks();
   }
 }
